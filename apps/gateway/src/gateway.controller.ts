@@ -17,7 +17,8 @@ export class GatewayController implements OnModuleInit {
     private readonly gatewayService: GatewayService,
     @Inject('PRODUCT_SERVICE') private readonly productClient: ClientKafka,
     @Inject('CART_SERVICE') private readonly cartClient:ClientKafka,
-    @Inject('ORDER_SERVICE') private readonly orderClient:ClientKafka
+    @Inject('ORDER_SERVICE') private readonly orderClient:ClientKafka,
+    @Inject('BILLING_SERVICE') private readonly billingClient:ClientKafka
   ) {}
 
   @Get()
@@ -45,6 +46,12 @@ export class GatewayController implements OnModuleInit {
     return this.gatewayService.handleGetOrders();
   }
 
+  @Get('billing')
+  getBilling() {
+    return this.gatewayService.handleGetBilling();
+  }
+
+
 
   // @Get('orders')
   // getOrders() {
@@ -61,5 +68,9 @@ export class GatewayController implements OnModuleInit {
 
   onModuleInit2(){
     this.orderClient.subscribeToResponseOf('get_order');
+  }
+
+  onModuleInit3(){
+    this.billingClient.subscribeToResponseOf('get_billing');
   }
 }

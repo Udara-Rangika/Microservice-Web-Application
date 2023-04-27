@@ -7,6 +7,9 @@ import { UpdateBillingDto } from './dto/updateBilling.dto';
 
 @Injectable()
 export class BillingService {
+  demoMethod() {
+    throw new Error('Method not implemented.');
+  }
   constructor(@InjectModel('Billing') private billingModel: Model<IBilling>) {}
   
   //create the new product
