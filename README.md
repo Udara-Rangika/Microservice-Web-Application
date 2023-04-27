@@ -1,12 +1,10 @@
-<p align="center">
-  <a href="https://i.ibb.co/gjtwvVP/Screenshot-2023-04-27-152140.png" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
 # Distributed-Systems-Ayurvedic-Medicines-Web
-This is a collaborative shopping platform for Ayurvedic medicines and supplements 
+ - This is a collaborative shopping platform for Ayurvedic medicines and supplements <br>
+ - Repository of DS Project of the Distributed System Module which is develop to manage the userbility, easyness etc through the microservice.
+
+
+# Technical Stack
+![enter image description here](https://i.ibb.co/gjtwvVP/Screenshot-2023-04-27-152140.png)
 
 # Collebarators
 
@@ -49,8 +47,3 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-
-
-## License
-
-Nest is [MIT licensed](LICENSE).
