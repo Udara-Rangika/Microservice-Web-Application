@@ -55,6 +55,7 @@ export class ProductController {
     }
   }
 
+  //Update product
   @Put('/:id')
   async updateProduct(
     @Res() response,
