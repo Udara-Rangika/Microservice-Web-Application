@@ -3,6 +3,7 @@ import { CartModule } from './cart.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
+  //create the microservice for cart
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     CartModule,
     {
