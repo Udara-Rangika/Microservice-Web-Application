@@ -7,15 +7,18 @@ import { UpdateCartDto } from './dto/updateCart.dto';
 
 @Injectable()
 export class CartService {
+  demoMethod() {
+    throw new Error('Method not implemented.');
+  }
   constructor(@InjectModel('Cart') private cartModel: Model<ICart>) {}
   
-  //create the new product
+  //create the new cart
   async createCart(createCartDto: CreateCartDto): Promise<ICart> {
     const newCart = await new this.cartModel(createCartDto);
     return newCart.save();
   }
 
-  //read the product by using id
+  //read the cart by using id
   async getCart(cartId: string): Promise<ICart> {
     const existingCart = await this.cartModel.findById(cartId).exec();
     if (!existingCart) {
@@ -24,7 +27,7 @@ export class CartService {
     return existingCart;
   }
 
-  //Delete the product
+  //Delete the cart
   async deleteCart(cartId: string): Promise<ICart> {
     const deletedCart = await this.cartModel.findByIdAndDelete(cartId);
     if (!deletedCart) {
@@ -33,7 +36,7 @@ export class CartService {
     return deletedCart;
   }
 
-  //Update the prodcut
+  //Update the cart
   async updateCart(
     cartId: string,
     updateCartDto: UpdateCartDto,
@@ -49,7 +52,7 @@ export class CartService {
     return existingCart;
   }
 
-  //Get all product details
+  //Get all cart details
   async getAllCart(): Promise<ICart[]> {
     const cartData = await this.cartModel.find();
     if (!cartData || cartData.length == 0) {

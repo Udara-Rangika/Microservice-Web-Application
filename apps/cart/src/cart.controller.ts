@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from
 import { CartService } from './cart.service';
 import { CreateCartDto } from './dto/createCart.dto';
 import { UpdateCartDto } from './dto/updateCart.dto';
+import { MessagePattern } from '@nestjs/microservices';
 
 @Controller('cart')
 export class CartController {
@@ -102,5 +103,11 @@ export class CartController {
     }
   }
   
+  //set the pattern for cart to call the gateway
+  @MessagePattern('get_carts')
+  getProducts() {
+    return this.cartService.demoMethod();
+  }
+
 
 }
