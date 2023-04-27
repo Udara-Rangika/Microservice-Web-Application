@@ -7,6 +7,9 @@ import { UpdateCartDto } from './dto/updateCart.dto';
 
 @Injectable()
 export class CartService {
+  demoMethod() {
+    throw new Error('Method not implemented.');
+  }
   constructor(@InjectModel('Cart') private cartModel: Model<ICart>) {}
   
   //create the new cart
