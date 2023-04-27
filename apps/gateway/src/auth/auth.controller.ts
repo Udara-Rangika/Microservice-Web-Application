@@ -21,7 +21,7 @@ export class AuthController {
     return this.authService.signUp(signUpDto);
   }
 
-  //create the user login
+
   @Post('/login')
   login(@Body() loginDto: LoginDto): Promise<{ token: string }> {
     return this.authService.login(loginDto);
@@ -29,7 +29,7 @@ export class AuthController {
 
   //get the all users
   @Get('/all')
-  @UseGuards(UserRoleGuard)
+  // @UseGuards(UserRoleGuard)
   getAll(): Promise<User[]> {
     return this.authService.getAllUsers();
   }

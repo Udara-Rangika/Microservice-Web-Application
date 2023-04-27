@@ -13,10 +13,12 @@ import { ProductService } from './product.service';
 import { CreateProductDto } from '../../src/dto/createProduct.dto';
 import { UpdateProductDto } from '../../src/dto/updateProduct.dto';
 
+//prodoct contoller call here
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
+  //create the product controller
   @Post()
   async createProduct(
     @Res() response,
@@ -39,6 +41,7 @@ export class ProductController {
     }
   }
 
+  //
   @Get()
   async getProducts(@Res() response) {
     try {
