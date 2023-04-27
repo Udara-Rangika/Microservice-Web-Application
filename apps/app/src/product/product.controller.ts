@@ -41,7 +41,7 @@ export class ProductController {
     }
   }
 
-  //
+  //Read all products
   @Get()
   async getProducts(@Res() response) {
     try {
@@ -55,6 +55,7 @@ export class ProductController {
     }
   }
 
+  //Update product
   @Put('/:id')
   async updateProduct(
     @Res() response,
@@ -75,6 +76,7 @@ export class ProductController {
     }
   }
 
+  //Get product by id
   @Get('/:id')
   async getProduct(@Res() response, @Param('id') productId: string) {
     try {
@@ -88,6 +90,7 @@ export class ProductController {
     }
   }
 
+  //delete product
   @Delete('/:id')
   async deleteProduct(@Res() response, @Param('id') productId: string) {
     try {
