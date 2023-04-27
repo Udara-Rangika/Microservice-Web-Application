@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="https://i.ibb.co/gjtwvVP/Screenshot-2023-04-27-152140.png" /></a>
 </p>
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
@@ -23,22 +23,24 @@ Member 04 - Rashmi Bhagya<br>
 mongoDB<br>
 express<br>
 react<br>
-nodeJs<br>
+nestJs<br>
 
 Bootswatch
 Redux
 
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Running the app
+# Installation
+```bash
+$ To frontend  - npm install
+$ To backend  -  npm install
 
 ```bash
 # development
-$ npm run start
+$ To run the backend type docker-compose up command
+$ -created the docker images and containors in the Docker desktop
+$ -Running the frontend throw the docker
+
+$ To run the frontend  type npm start
 
 # watch mode
 $ npm run start:dev
