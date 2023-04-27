@@ -6,10 +6,17 @@ async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     BillingModule,
     {
-      transport: Transport.TCP,
+      //set the kafka to connect the billing for gateway
+      transport: Transport.KAFKA,
       options: {
-        port: 3004,
-      },    },
+        client: {
+          brokers: ['localhost:9092'],
+        },
+        consumer: {
+          groupId: 'product-consumer',
+        },
+      },
+    },
   );
   
   await app.listen();
