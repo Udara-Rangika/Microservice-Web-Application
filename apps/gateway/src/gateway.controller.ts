@@ -12,9 +12,11 @@ import { ClientKafka } from '@nestjs/microservices';
 
 @Controller()
 export class GatewayController implements OnModuleInit {
+  
   constructor(
     private readonly gatewayService: GatewayService,
     @Inject('PRODUCT_SERVICE') private readonly productClient: ClientKafka,
+    @Inject('CART_SERVICE') private readonly cartClient:ClientKafka
   ) {}
 
   @Get()
@@ -39,5 +41,9 @@ export class GatewayController implements OnModuleInit {
 
   onModuleInit() {
     this.productClient.subscribeToResponseOf('get_products');
+  }
+
+  onModuleInit1(){
+    this.cartClient.subscribeToResponseOf('get_cart');
   }
 }
