@@ -76,6 +76,7 @@ export class ProductController {
     }
   }
 
+  //Get product by id
   @Get('/:id')
   async getProduct(@Res() response, @Param('id') productId: string) {
     try {
