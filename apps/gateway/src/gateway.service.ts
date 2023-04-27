@@ -12,6 +12,8 @@ export class GatewayService {
     // private readonly communicationClient: ClientProxy,
     @Inject('PRODUCT_SERVICE')
     private readonly productClient: ClientProxy,
+    @Inject('CART_SERVICE')
+    private readonly cartClient: ClientProxy,
   ) // @Inject('ORDER_SERVICE') // private readonly orderClient: ClientProxy,
   {}
 
@@ -31,6 +33,14 @@ export class GatewayService {
       console.log(products);
     });
   }
+
+  handleGetCarts() {
+    this.cartClient.send('get_carts', {}).subscribe((carts) => {
+      console.log(carts);
+    });
+  }
+
+
   // getFromOrderService() {
   //   return this.orderClient.send({ cmd: 'get_order' }, {});
   // }
