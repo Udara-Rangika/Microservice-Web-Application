@@ -7,15 +7,18 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class OrderService {
+  demoMethod() {
+    throw new Error('Method not implemented.');
+  }
   constructor(@InjectModel('Order') private orderModel: Model<IOrder>) {}
   
-  //create the new product
+  //create the new order
   async createOrder(createOrderDto: CreateOrderDto): Promise<IOrder> {
     const newStudent = await new this.orderModel(createOrderDto);
     return newStudent.save();
   }
 
-  //read the product by using id
+  //read the order by using id
   async getOrder(orderId: string): Promise<IOrder> {
     const existingOrder = await this.orderModel.findById(orderId).exec();
     if (!existingOrder) {
@@ -24,7 +27,7 @@ export class OrderService {
     return existingOrder;
   }
 
-  //Delete the product
+  //Delete the order
   async deleteOrder(orderId: string): Promise<IOrder> {
     const deletedOrder = await this.orderModel.findByIdAndDelete(orderId);
     if (!deletedOrder) {
@@ -33,7 +36,7 @@ export class OrderService {
     return deletedOrder;
   }
 
-  //Update the prodcut
+  //Update the order
   async updateOrder(
     orderId: string,
     updateOrderDto: UpdateOrderDto,
@@ -49,7 +52,7 @@ export class OrderService {
     return existingOrder;
   }
 
-  //Get all product details
+  //Get all order details
   async getAllOrders(): Promise<IOrder[]> {
     const orderData = await this.orderModel.find();
     if (!orderData || orderData.length == 0) {

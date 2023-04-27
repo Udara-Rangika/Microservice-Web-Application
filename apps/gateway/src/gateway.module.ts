@@ -51,6 +51,20 @@ import { ProductModule } from './product/product.module';
         },
       },
 
+      {
+        name: 'CLIENT_SERVICE',
+        transport: Transport.KAFKA,
+        options: {
+          client: {
+            clientId: 'order',
+            brokers: ['localhost:9092'],
+          },
+          consumer: {
+            groupId: 'product-consumer',
+          },
+        },
+      },
+
     ]),
     ConfigModule.forRoot({
       envFilePath: './apps/gateway/.env',

@@ -6,6 +6,7 @@ import { CreateUserEvent } from './create-user.event';
 @Injectable()
 export class GatewayService {
   private readonly users: any[] = [];
+  orderClient: any;
 
   constructor(
     // @Inject('GATEWAY_SERVICE')
@@ -40,6 +41,11 @@ export class GatewayService {
     });
   }
 
+  handleGetOrders() {
+    this.orderClient.send('get_orders', {}).subscribe((orders) => {
+      console.log(orders);
+    });
+  }
 
   // getFromOrderService() {
   //   return this.orderClient.send({ cmd: 'get_order' }, {});

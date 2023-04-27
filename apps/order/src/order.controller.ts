@@ -103,9 +103,15 @@ export class OrderController {
     }
   }
   
-  @MessagePattern({ cmd: 'get_order' })
-  getAnalytics() {
-    return this.orderService.logData();
-  }
+//   @MessagePattern({ cmd: 'get_order' })
+//   getAnalytics() {
+//     return this.orderService.logData();
+//   }
+
+//set the pattern for order to call the gateway
+@MessagePattern('get_orders')
+ getOrderss() {
+  return this.orderService.demoMethod();
+}
 
 }
