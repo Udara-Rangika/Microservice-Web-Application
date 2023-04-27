@@ -41,7 +41,7 @@ export class ProductController {
     }
   }
 
-  //
+  //Read all products
   @Get()
   async getProducts(@Res() response) {
     try {
