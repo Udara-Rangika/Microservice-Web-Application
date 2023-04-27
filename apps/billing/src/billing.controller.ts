@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from
 import { BillingService } from './billing.service';
 import { CreateBillingDto } from './dto/createBilling.dto';
 import { UpdateBillingDto } from './dto/updateBilling.dto';
+import { MessagePattern } from '@nestjs/microservices';
 
 @Controller('billing')
 export class BillingController {
@@ -105,4 +106,11 @@ export class BillingController {
     }
   }
   
+ //set the pattern for order to call the gateway
+@MessagePattern('get_billing')
+  getbilling() {
+    return this.billingService.demoMethod();
+}
+
+
 }
