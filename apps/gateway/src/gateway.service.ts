@@ -6,8 +6,7 @@ import { CreateUserEvent } from './create-user.event';
 @Injectable()
 export class GatewayService {
   private readonly users: any[] = [];
-  orderClient: any;
-
+  
   constructor(
     // @Inject('GATEWAY_SERVICE')
     // private readonly communicationClient: ClientProxy,
@@ -15,6 +14,10 @@ export class GatewayService {
     private readonly productClient: ClientProxy,
     @Inject('CART_SERVICE')
     private readonly cartClient: ClientProxy,
+    @Inject('ORDER_SERVICE')
+    private readonly orderClient: ClientProxy,
+    @Inject('BILLING_SERVICE')
+    private readonly billingClient: ClientProxy,
   ) // @Inject('ORDER_SERVICE') // private readonly orderClient: ClientProxy,
   {}
 
@@ -44,6 +47,12 @@ export class GatewayService {
   handleGetOrders() {
     this.orderClient.send('get_orders', {}).subscribe((orders) => {
       console.log(orders);
+    });
+  }
+
+  handleGetBilling() {
+    this.billingClient.send('get_billing', {}).subscribe((billing) => {
+      console.log(billing);
     });
   }
 
