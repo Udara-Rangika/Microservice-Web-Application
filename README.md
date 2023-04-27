@@ -14,7 +14,7 @@ Member 03 - Heshan Kotuwegedra<br>
 Member 04 - Rashmi Bhagya<br>
 
 
-## Technical Stack
+# Technical Stack
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
@@ -23,11 +23,10 @@ express<br>
 react<br>
 nestJs<br>
 
-Bootswatch
+Bootswatch<br>
 Redux
 
-## Running the app
-# Installation
+# Installation & Running the app
 ```bash
 $ To frontend  - npm install
 $ To backend  -  npm install
