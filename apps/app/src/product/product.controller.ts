@@ -90,6 +90,7 @@ export class ProductController {
     }
   }
 
+  //delete product
   @Delete('/:id')
   async deleteProduct(@Res() response, @Param('id') productId: string) {
     try {
