@@ -105,7 +105,7 @@ export class CartController {
   
   //set the pattern for cart to call the gateway
   @MessagePattern('get_carts')
-  getProducts() {
+  getCarts() {
     return this.cartService.demoMethod();
   }
 

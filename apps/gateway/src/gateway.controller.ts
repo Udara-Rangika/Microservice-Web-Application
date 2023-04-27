@@ -16,7 +16,8 @@ export class GatewayController implements OnModuleInit {
   constructor(
     private readonly gatewayService: GatewayService,
     @Inject('PRODUCT_SERVICE') private readonly productClient: ClientKafka,
-    @Inject('CART_SERVICE') private readonly cartClient:ClientKafka
+    @Inject('CART_SERVICE') private readonly cartClient:ClientKafka,
+    @Inject('ORDER_SERVICE') private readonly orderClient:ClientKafka
   ) {}
 
   @Get()
@@ -34,6 +35,17 @@ export class GatewayController implements OnModuleInit {
     return this.gatewayService.handleGetProducts();
   }
 
+  @Get('carts')
+  getCarts() {
+    return this.gatewayService.handleGetCarts();
+  }
+
+  @Get('orders')
+  getOrders() {
+    return this.gatewayService.handleGetOrders();
+  }
+
+
   // @Get('orders')
   // getOrders() {
   //   return this.gatewayService.getFromOrderService();
@@ -45,5 +57,9 @@ export class GatewayController implements OnModuleInit {
 
   onModuleInit1(){
     this.cartClient.subscribeToResponseOf('get_cart');
+  }
+
+  onModuleInit2(){
+    this.orderClient.subscribeToResponseOf('get_order');
   }
 }
