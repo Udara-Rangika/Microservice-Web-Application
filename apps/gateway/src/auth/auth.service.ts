@@ -17,6 +17,7 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  //create the user register service
   async signUp(signUpDto: SignUpDto): Promise<{ token: string }> {
     const { name, email, password } = signUpDto;
 
@@ -34,6 +35,7 @@ export class AuthService {
     return { token };
   }
 
+  //create the login user service
   async login(loginDto: LoginDto): Promise<{ token: string }> {
     const { email, password } = loginDto;
 
@@ -54,6 +56,7 @@ export class AuthService {
     return { token };
   }
 
+  //user get by id
   async getUserById(id: string): Promise<User> {
     const user = await this.userModel.findOne({ _id: id }).lean().exec();
 
@@ -64,6 +67,7 @@ export class AuthService {
     return user as User;
   }
 
+  //get all users
   async getAllUsers(): Promise<User[]> {
     const users = await this.userModel.find();
 
@@ -74,6 +78,7 @@ export class AuthService {
     return users;
   }
 
+  //get user by email
   async getUserByEmail(email: string): Promise<User> {
     const user = await this.userModel.findOne({ email });
 
@@ -84,6 +89,7 @@ export class AuthService {
     return user;
   }
 
+  //create admin user
   async createAdminUser(
     email: string,
     password: string,
@@ -107,6 +113,7 @@ export class AuthService {
     await adminUser.save();
   }
 
+  //create user
   async createUser(createUserDto: CreateUserDto): Promise<User> {
     const { name, email, password, role } = createUserDto;
     const existingUser = await this.userModel.findOne({ email });

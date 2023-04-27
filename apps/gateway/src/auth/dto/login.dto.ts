@@ -1,5 +1,6 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
 
+//create the login dto
 export class LoginDto {
   @IsNotEmpty()
   @IsEmail({}, { message: 'Please enter correct email' })
