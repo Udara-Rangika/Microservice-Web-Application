@@ -11,15 +11,16 @@ async function bootstrap() {
       transport: Transport.KAFKA,
       options: {
         client: {
-          brokers: ['localhost:9092'],
+          brokers: ['localhost:9092'], // Specify the Kafka broker(s) to connect to
         },
         consumer: {
-          groupId: 'product-consumer',
+          groupId: 'product-consumer', // Specify the Kafka consumer group ID
         },
       },
     },
   );
   
+  // Start the microservice
   await app.listen();
 }
 bootstrap();
