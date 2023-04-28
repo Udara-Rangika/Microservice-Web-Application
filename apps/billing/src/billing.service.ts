@@ -52,7 +52,7 @@ export class BillingService {
     return existingBilling;
   }
 
-  //Get all product details
+  // Get all billing records
   async getAllBilling(): Promise<IBilling[]> {
     const billingData = await this.billingModel.find();
     if (!billingData || billingData.length == 0) {
