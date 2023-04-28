@@ -34,6 +34,7 @@ export class BillingController {
     }
   }
 
+  // A GET request to retrieve all payments
   @Get()
   async getPayments(@Res() response) {
     try {
