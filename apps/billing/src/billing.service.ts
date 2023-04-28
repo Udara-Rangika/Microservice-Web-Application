@@ -36,7 +36,7 @@ export class BillingService {
     return deletedBilling;
   }
 
-  //Update the prodcut
+  // Update a billing record by ID
   async updateBilling(
     billingId: string,
     updateBillingDto: UpdateBillingDto,
