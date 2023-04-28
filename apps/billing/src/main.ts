@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     BillingModule,
     {
-      //set the kafka to connect the billing for gateway
+      // Set up Kafka as the transport layer for communication with other services
       transport: Transport.KAFKA,
       options: {
         client: {
