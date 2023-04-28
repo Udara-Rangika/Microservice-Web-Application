@@ -48,6 +48,7 @@ export class BillingController {
     }
   }
 
+  // A PUT request to update a specific payment using its ID
   @Put('/:id')
   async updateBilling(
     @Res() response,
