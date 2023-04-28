@@ -11,6 +11,7 @@ export class BillingController {
   }
   constructor(private readonly billingService: BillingService) {}
 
+  // A POST request to create a new payment
   @Post()
   async createBilling(
     @Res() response,
