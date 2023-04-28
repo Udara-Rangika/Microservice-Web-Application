@@ -69,6 +69,7 @@ export class BillingController {
     }
   }
 
+  // A GET request to retrieve a specific payment using its ID
   @Get('/:id')
   async getBilling(@Res() response, @Param('id') billingId: string) {
     try {
