@@ -12,7 +12,7 @@ export class BillingService {
   }
   constructor(@InjectModel('Billing') private billingModel: Model<IBilling>) {}
   
-  //create the new product
+  // Create a new billing record
   async createBilling(createBillingDto: CreateBillingDto): Promise<IBilling> {
     const newBilling = await new this.billingModel(createBillingDto);
     return newBilling.save();
