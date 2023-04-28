@@ -83,6 +83,7 @@ export class BillingController {
     }
   }
 
+  // A DELETE request to delete a specific payment using its ID
   @Delete('/:id')
   async deleteBilling(@Res() response, @Param('id') billingId: string) {
     try {
