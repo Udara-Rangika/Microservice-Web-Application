@@ -27,7 +27,7 @@ export class BillingService {
     return existingBilling;
   }
 
-  //Delete the product
+  // Delete a billing record by ID
   async deleteBilling(billingId: string): Promise<IBilling> {
     const deletedBilling = await this.billingModel.findByIdAndDelete(billingId);
     if (!deletedBilling) {
