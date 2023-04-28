@@ -18,7 +18,7 @@ export class BillingService {
     return newBilling.save();
   }
 
-  //read the product by using id
+  // Get a single billing record by ID
   async getBilling(billingId: string): Promise<IBilling> {
     const existingBilling = await this.billingModel.findById(billingId).exec();
     if (!existingBilling) {
