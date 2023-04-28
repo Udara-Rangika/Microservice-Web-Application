@@ -3,6 +3,7 @@ import { BillingModule } from './billing.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
+  // Create a new NestJS microservice instance
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     BillingModule,
     {
